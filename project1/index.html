@@ -9,17 +9,18 @@
 </head>
 <body>
   
-  <h1></h1>>
+  <h1></h1>
 
   <script>
     
-    $.getJSON('https://exam.htmdom.com/api', function (json) {
-      if (json) {
-        $('h1').append(json);
-      } else {
-        $('h1').append('error');
+    $.ajax({
+      url: 'https://exam.htmdom.com/api',
+      method: 'get',
+      dataType: 'jsonp',
+      success: function(data) {
+        console.log(data);
       }
-    });
+    })
 
   </script>
 
